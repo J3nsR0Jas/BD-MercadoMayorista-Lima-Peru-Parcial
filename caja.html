@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo de Caja Ventanilla - Mercado Mayorista Perú</title>
+  <link rel="stylesheet" href="css/globales.css">
+  <link rel="stylesheet" href="css/caja.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="contenedor header-contenido">
+      <h1 class="logo">
+        <svg class="icono-svg" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5-1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
+        </svg>
+        Mercado Mayorista <span>Perú</span>
+      </h1>
+      <nav class="nav">
+        <a href="panel.html">Panel Principal</a>
+        <a href="#" id="btn-cerrar-sesion" class="btn-logout-nav">Cerrar Sesión</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-container">
+    <section class="card">
+      <h2 class="titulo-seccion">💵 Módulo de Caja Ventanilla</h2>
+      <p class="subtitulo">Cobros presenciales y verificación de pagos en línea</p>
+
+      <div class="form-busqueda-caja">
+        <label for="buscar-caja">Buscar Solicitud (Código de Seguimiento o RUC/DNI):</label>
+        <div class="grupo-input-boton">
+          <input type="text" id="buscar-caja" class="input-buscar" placeholder="Ej. COD-12345678 o 77889900">
+          <button id="btn-buscar-caja" class="btn btn-save">🔍 Buscar</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h3>💻 Pagos en Línea Recientes (Verificación)</h3>
+      <div class="table-container">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Código</th>
+              <th>Comerciante</th>
+              <th>Producto</th>
+              <th>Monto Total</th>
+              <th>Estado Pago</th>
+              <th>Acción</th>
+            </tr>
+          </thead>
+          <tbody id="tabla-caja-body">
+            <tr>
+              <td colspan="6" class="loading-cell">Cargando registros pendientes de cobro...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="js/caja/caja.js"></script>
+</body>
+</html>

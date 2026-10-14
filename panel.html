@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel de Administración CRUD - Mercado Mayorista Perú</title>
+  <link rel="stylesheet" href="css/globales.css">
+  <link rel="stylesheet" href="css/panel.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="logo">
+      <svg class="header-icon" viewBox="0 0 640 512" fill="currentColor">
+        <path d="M624 352h-16V243.9c0-12.7-5.1-24.9-14.1-33.9L494 110.1c-9-9-21.2-14.1-33.9-14.1H416V48c0-26.5-21.5-48-48-48H48C21.5 0 0 21.5 0 48v320c0 26.5 21.5 48 48 48h16c0 53 43 96 96 96s96-43 96-96h128c0 53 43 96 96 96s96-43 96-96h48c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zM160 464c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48zm320 0c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48zm80-208H464V144h30.1l97.9 97.9V256z"/>
+      </svg>
+      <h1>Panel de Administración CRUD</h1>
+    </div>
+    <nav class="nav">
+      <a href="#" id="btn-cerrar-sesion" class="btn-logout">Cerrar Sesión</a>
+    </nav>
+  </header>
+
+  <main class="main-container">
+
+    <div class="card banner-turno">
+      <div>
+        <strong class="texto-turno-titulo">👤 Control de Acceso:</strong>
+        <span id="info-turno-usuario" class="texto-turno-info">Verificando usuario...</span>
+      </div>
+
+      <div class="simulacion-contenedor">
+        <div id="estado-permiso-turno">
+          <span class="badge-permiso-activo">Verificando...</span>
+        </div>
+      </div>
+    </div>
+
+    <section class="card panel-card">
+      <div class="panel-header-actions">
+        <h2>Listado General de Registros</h2>
+        
+        <div class="acciones-superiores">
+          <input type="text" id="input-buscar" class="input-buscar" placeholder="🔍 Buscar Razón Social o Producto...">
+          <button id="btn-nuevo-registro" class="btn-save">+ Nuevo Comerciante</button>
+        </div>
+      </div>
+
+      <div class="table-container">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Código</th>
+              <th>Razón Social</th>
+              <th>Producto Principal</th>
+              <th>Teléfono</th>
+              <th>Área / Días</th>
+              <th>Monto Total</th>
+              <th>Estado Pago</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="tabla-registros">
+            <tr>
+              <td colspan="8" class="loading-cell">Cargando registros de la base de datos...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <!-- MODAL EDITAR -->
+  <div id="modal-editar" class="modal">
+    <div class="modal-content">
+      <h3>Editar Registro Comerciante</h3>
+      <form id="form-editar">
+        <input type="hidden" id="edit-id">
+
+        <div class="form-group">
+          <label for="edit-razon">Razón Social / Nombre Comercial:</label>
+          <input type="text" id="edit-razon" required>
+        </div>
+
+        <div class="form-group">
+          <label for="edit-telefono">Teléfono:</label>
+          <input type="text" id="edit-telefono">
+        </div>
+
+        <div class="form-group">
+          <label for="edit-estado">Estado de Pago:</label>
+          <select id="edit-estado">
+            <option value="pendiente">pendiente</option>
+            <option value="pagado">pagado</option>
+            <option value="exonerado">exonerado</option>
+          </select>
+        </div>
+
+        <div class="modal-actions">
+          <button type="button" id="btn-cancelar-modal" class="btn-cancel">Cancelar</button>
+          <button type="submit" class="btn-save">Guardar Cambios</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="modal-nuevo" class="modal modal-oculto">
+    <div class="modal-content">
+      <h3>Añadir Nuevo Comerciante</h3>
+      <form id="form-nuevo">
+        <div class="form-group">
+          <label for="nuevo-razon">Razón Social / Nombre Comercial:</label>
+          <input type="text" id="nuevo-razon" required>
+        </div>
+
+        <div class="form-group">
+          <label for="nuevo-producto">Producto Principal:</label>
+          <input type="text" id="nuevo-producto" required>
+        </div>
+
+        <div class="form-group">
+          <label for="nuevo-telefono">Teléfono:</label>
+          <input type="text" id="nuevo-telefono" required>
+        </div>
+
+        <div class="modal-actions">
+          <button type="button" id="btn-cancelar-nuevo" class="btn-cancel">Cancelar</button>
+          <button type="submit" class="btn-save">Crear Registro</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script type="module" src="js/panel/panel.js"></script>
+</body>
+</html>

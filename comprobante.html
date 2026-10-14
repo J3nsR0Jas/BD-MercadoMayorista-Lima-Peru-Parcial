@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comprobante de Pago - Mercado Mayorista Perú</title>
+  <link rel="stylesheet" href="css/globales.css">
+  <link rel="stylesheet" href="css/caja.css">
+  <link rel="stylesheet" href="css/formulario.css">
+</head>
+<body>
+
+  <header class="header no-imprimir">
+    <div class="contenedor header-contenido">
+      <h1 class="logo">
+        <svg class="icono-svg" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5-1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5-1.5z"/>
+        </svg>
+        Mercado Mayorista <span>Perú</span>
+      </h1>
+      <nav class="nav">
+        <a href="index.html">Inicio</a>
+        <a href="formulario.html">Cotizar Puesto</a>
+        <a href="panel.html">Ir al Panel</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="seccion contenedor">
+
+    <!-- Stepper de Progreso PASO 3 -->
+    <div class="stepper-container no-imprimir">
+      <div class="step-item step-1 completado">
+        <div class="step-circle">✓</div>
+        <span class="step-label">Cotización</span>
+      </div>
+      <div class="step-line line-1 activa"></div>
+      <div class="step-item step-2 completado">
+        <div class="step-circle">✓</div>
+        <span class="step-label">Pago Online</span>
+      </div>
+      <div class="step-line line-2 activa"></div>
+      <div class="step-item step-3 activo completado">
+        <div class="step-circle">3</div>
+        <span class="step-label">Comprobante</span>
+      </div>
+    </div>
+
+    <div class="contenedor-caja ticket-imprimible">
+      <div class="encabezado-ticket">
+        <h2>🏪 Mercado Mayorista Perú</h2>
+        <p class="subtitulo-ticket">Constancia de Pago / Pase de Ingreso</p>
+      </div>
+
+      <div class="detalle-ticket">
+        <div class="detalle-linea">
+          <span>N° Operación / Código:</span>
+          <strong id="comp-codigo">Cargando...</strong>
+        </div>
+        <div class="detalle-linea">
+          <span>Fecha y Hora:</span>
+          <strong id="comp-fecha">Cargando...</strong>
+        </div>
+        <div class="detalle-linea">
+          <span>Comerciante:</span>
+          <strong id="comp-comerciante">Cargando...</strong>
+        </div>
+        <div class="detalle-linea">
+          <span>Detalle Alquiler:</span>
+          <strong id="comp-detalle">Cargando...</strong>
+        </div>
+        <div class="detalle-linea">
+          <span>Canal / Método de Pago:</span>
+          <strong id="comp-canal">Tarjeta / En Línea</strong>
+        </div>
+        <div class="monto-pagar-caja" id="comp-monto">
+          S/ 0.00
+        </div>
+      </div>
+
+      <div class="acciones-comprobante no-imprimir">
+        <button id="btn-imprimir" class="btn btn-bloque">
+          🖨️ Imprimir Comprobante
+        </button>
+        <a href="index.html" class="btn-secundario-link">Volver al Inicio</a>
+      </div>
+    </div>
+  </main>
+
+  <script type="module" src="js/comprobante/comprobante.js"></script>
+</body>
+</html>

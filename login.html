@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acceso - Mercado Mayorista Perú</title>
+  <link rel="stylesheet" href="css/globales.css">
+  <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <svg class="header-icon" viewBox="0 0 640 512" fill="currentColor">
+        <path d="M624 352h-16V243.9c0-12.7-5.1-24.9-14.1-33.9L494 110.1c-9-9-21.2-14.1-33.9-14.1H416V48c0-26.5-21.5-48-48-48H48C21.5 0 0 21.5 0 48v320c0 26.5 21.5 48 48 48h16c0 53 43 96 96 96s96-43 96-96h128c0 53 43 96 96 96s96-43 96-96h48c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zM160 464c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48zm320 0c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48zm80-208H464V144h30.1l97.9 97.9V256z"/>
+      </svg>
+      <h1>Mercado Mayorista Perú</h1>
+    </div>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="#">Precios Diarios</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="auth-card">
+      <div class="auth-tabs">
+        <button id="tab-login" class="tab-btn active" type="button" onclick="mostrarFormulario('login')">Iniciar Sesión</button>
+        <button id="tab-registro" class="tab-btn" type="button" onclick="mostrarFormulario('registro')">Registrarse</button>
+      </div>
+      
+      <div id="sec-login" class="form-section active">
+        <div class="auth-header">
+          <h2>Acceso de Comerciantes</h2>
+          <p>Inicia sesión para ingresar a tu cuenta</p>
+        </div>
+
+        <form id="form-login">
+          <div class="form-group">
+            <label for="correo">Correo Electrónico:</label>
+            <input type="email" id="correo" name="correo" placeholder="ejemplo@comerciante.pe" required>
+          </div>
+
+          <div class="form-group">
+            <label for="contrasena">Contraseña:</label>
+            <input type="password" id="contrasena" name="contrasena" placeholder="******" required>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+        </form>
+      </div>
+
+      <div id="sec-registro" class="form-section">
+        <div class="auth-header">
+          <h2>¿No tienes cuenta?</h2>
+          <p>Regístrate para solicitar tu perfil de comerciante</p>
+        </div>
+
+        <form id="form-registro">
+          <div class="form-group">
+            <label for="reg-nombre">Nombre Completo:</label>
+            <input type="text" id="reg-nombre" name="nombre" placeholder="Juan Pérez" required>
+          </div>
+
+          <div class="form-group">
+            <label for="reg-correo">Correo Electrónico:</label>
+            <input type="email" id="reg-correo" name="correo" placeholder="juan@ejemplo.com" required>
+          </div>
+
+          <div class="form-group">
+            <label for="reg-contrasena">Contraseña:</label>
+            <input type="password" id="reg-contrasena" name="contrasena" placeholder="******" required>
+          </div>
+
+          <button type="submit" class="btn btn-secondary">Crear Cuenta</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Mercado Mayorista Perú - Empresa Municipal de Mercados. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    function mostrarFormulario(tipo) {
+      document.querySelectorAll('.form-section').forEach(sec => sec.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+
+      if (tipo === 'login') {
+        document.getElementById('sec-login').classList.add('active');
+        document.getElementById('tab-login').classList.add('active');
+      } else {
+        document.getElementById('sec-registro').classList.add('active');
+        document.getElementById('tab-registro').classList.add('active');
+      }
+    }
+  </script>
+
+  <script type="module" src="js/auth/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pasarela de Pago - Mercado Mayorista Perú</title>
+  <link rel="stylesheet" href="css/globales.css">
+  <link rel="stylesheet" href="css/caja.css">
+  <link rel="stylesheet" href="css/formulario.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="contenedor header-contenido">
+      <h1 class="logo">
+        <svg class="icono-svg" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5-1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5-1.5z"/>
+        </svg>
+        Mercado Mayorista <span>Perú</span>
+      </h1>
+      <nav class="nav">
+        <a href="index.html">Inicio</a>
+        <a href="formulario.html">Cotizar Puesto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="seccion contenedor">
+
+    <!-- Stepper de Progreso PASO 2 -->
+    <div class="stepper-container">
+      <div class="step-item step-1 completado">
+        <div class="step-circle">✓</div>
+        <span class="step-label">Cotización</span>
+      </div>
+      <div class="step-line line-1 activa"></div>
+      <div class="step-item step-2 activo">
+        <div class="step-circle">2</div>
+        <span class="step-label">Pago Online</span>
+      </div>
+      <div class="step-line line-2"></div>
+      <div class="step-item step-3">
+        <div class="step-circle">3</div>
+        <span class="step-label">Comprobante</span>
+      </div>
+    </div>
+
+    <div class="contenedor-caja">
+      <h2 class="titulo-seccion">Pasarela de Pago en Línea</h2>
+      <p class="subtitulo">Confirma el pago para obtener tu pase de ingreso autorizado.</p>
+
+      <div class="resumen-pago-caja">
+        <div class="linea-resumen">
+          <span>Comerciante:</span>
+          <strong id="pago-nombre">Cargando...</strong>
+        </div>
+        <div class="linea-resumen">
+          <span>Detalle:</span>
+          <strong id="pago-detalle">Alquiler de Puesto</strong>
+        </div>
+        <div class="monto-pagar-caja" id="pago-monto">
+          S/ 0.00
+        </div>
+      </div>
+
+      <form id="form-pasarela-pago" class="form-estilizado">
+        <input type="hidden" id="pago-registro-id">
+
+        <div class="campo">
+          <label for="numero-tarjeta">Número de Tarjeta:</label>
+          <input type="text" id="numero-tarjeta" placeholder="4557 0000 0000 0000" maxlength="19" required>
+        </div>
+
+        <div class="grupo-doble">
+          <div class="campo">
+            <label for="fecha-expiracion">Vencimiento:</label>
+            <input type="text" id="fecha-expiracion" placeholder="MM/AA" maxlength="5" required>
+          </div>
+          <div class="campo">
+            <label for="cvv-tarjeta">CVV:</label>
+            <input type="password" id="cvv-tarjeta" placeholder="123" maxlength="4" required>
+          </div>
+        </div>
+
+        <div class="acciones-form">
+          <button type="submit" class="btn btn-bloque">💳 Confirmar y Pagar Ahora</button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <script type="module" src="js/pago/pago.js"></script>
+</body>
+</html>

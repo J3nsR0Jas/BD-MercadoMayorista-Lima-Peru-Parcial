@@ -1,0 +1,206 @@
+/* =========================================================
+   ESTILOS GENERALES Y TABLA DE PRECIOS
+   ========================================================= */
+
+.data-table-precios {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--color-claro, #ffffff);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.data-table-precios th, 
+.data-table-precios td {
+    padding: 14px 18px;
+    text-align: left;
+    border-bottom: 1px solid var(--color-borde, #e2e8f0);
+}
+
+.data-table-precios th {
+    background-color: var(--color-primario, #0b3c5d);
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.data-table-precios tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+.data-table-precios tbody tr:hover {
+    background-color: #f8fafc;
+}
+
+/* =========================================================
+   1. FILTROS POR CATEGORÍA
+   ========================================================= */
+
+.filtros-categoria {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.btn-filtro {
+    background-color: #f1f5f9;
+    border: 1px solid #cbd5e1;
+    color: #334155;
+    padding: 9px 18px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-filtro:hover {
+    background-color: #e2e8f0;
+}
+
+.btn-filtro.activo {
+    background-color: var(--color-primario, #0b3c5d);
+    color: #ffffff;
+    border-color: var(--color-primario, #0b3c5d);
+    box-shadow: 0 4px 10px rgba(11, 60, 93, 0.2);
+}
+
+/* =========================================================
+   2. TENDENCIAS DE PRECIOS (BADGES)
+   ========================================================= */
+
+.badge-tendencia {
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.82rem;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.badge-tendencia.sube {
+    background-color: #fee2e2;
+    color: #dc2626;
+}
+
+.badge-tendencia.baja {
+    background-color: #dcfce7;
+    color: #16a34a;
+}
+
+.badge-tendencia.estable {
+    background-color: #f1f5f9;
+    color: #64748b;
+}
+
+.badge-stock {
+    background-color: #e0f2fe;
+    color: #0284c7;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+}
+
+/* =========================================================
+   3. SIMULADOR / COTIZADOR DE COMPRAS
+   ========================================================= */
+
+.card-cotizador {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    border: 1px solid var(--color-borde, #e2e8f0);
+    border-left: 5px solid var(--color-acento, #e67e22);
+    border-radius: 8px;
+    padding: 22px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.card-cotizador h3 {
+    margin-top: 0;
+    color: var(--color-primario, #0b3c5d);
+    font-size: 1.2rem;
+}
+
+.grid-cotizador {
+    display: grid;
+    grid-template-columns: 2fr 1.2fr 1.5fr;
+    gap: 20px;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.grid-cotizador .campo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.grid-cotizador select,
+.grid-cotizador input {
+    padding: 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 0.95rem;
+}
+
+.cot-resultado {
+    background-color: #f0f9ff;
+    border: 1px solid #bae6fd;
+    padding: 12px 18px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.cot-resultado span {
+    font-size: 0.82rem;
+    color: #0369a1;
+    font-weight: 600;
+}
+
+.cot-resultado strong {
+    font-size: 1.5rem;
+    color: #0c4a6e;
+}
+
+/* 1. Transición suave y elevación en las filas de la tabla */
+table tbody tr {
+  background-color: #1e293b;
+  color: #ffffff;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+  cursor: pointer;
+}
+
+/* Efecto de elevación al pasar el mouse por la fila */
+table tbody tr:hover {
+  background-color: #334155 !important; /* Fondo un poco más claro */
+  transform: translateY(-3px) scale(1.005); /* Se levanta 3px */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Sombra flotante */
+}
+
+table tbody tr td {
+  color: #ffffff !important;
+}
+
+/* 2. Botones de filtro con efecto de elevación y pulso */
+.btn-filtro,
+.filtro-btn,
+button.filtro {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-filtro:hover,
+.filtro-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+/* Estado activo del botón sin perder animación */
+.btn-filtro.active,
+.filtro-btn.active {
+  background-color: #2563eb !important;
+  color: #ffffff !important;
+  border-color: #3b82f6 !important;
+  transform: translateY(-1px);
+}

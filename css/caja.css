@@ -1,0 +1,119 @@
+.contenedor-caja {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: var(--color-claro);
+    border: 1px solid var(--color-borde);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.detalle-ticket {
+    background: #0f172a;
+    border: 1px dashed var(--color-borde);
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.detalle-linea {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    color: #cbd5e1;
+}
+
+.monto-pagar-caja {
+    font-size: 1.8rem;
+    color: #34d399;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 15px;
+}
+.encabezado-ticket {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.encabezado-ticket h2 {
+  color: #f8fafc;
+  margin-bottom: 5px;
+}
+
+.subtitulo-ticket {
+  color: #94a3b8;
+  font-size: 0.9rem;
+}
+
+.acciones-comprobante {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.btn-secundario-link {
+  text-align: center;
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+
+.btn-secundario-link:hover {
+  color: #f8fafc;
+}
+
+/* Ocultar elementos en la impresión */
+@media print {
+  .no-imprimir {
+    display: none !important;
+  }
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  .contenedor-caja {
+    box-shadow: none !important;
+    border: 1px solid #000 !important;
+    background: white !important;
+    color: black !important;
+  }
+  .detalle-ticket {
+    background: #f8fafc !important;
+    border: 1px dashed #000 !important;
+  }
+  .detalle-linea, .detalle-linea strong {
+    color: black !important;
+  }
+  .monto-pagar-caja {
+    color: #000 !important;
+  }
+}
+.form-busqueda-caja {
+  margin-top: 15px;
+}
+
+.grupo-input-boton {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.grupo-input-boton .input-buscar {
+  flex: 1;
+  background-color: #0f172a;
+  color: #f8fafc;
+  border: 1px solid #334155;
+  padding: 10px 14px;
+  border-radius: 6px;
+}
+
+.btn-logout-nav {
+  background-color: #dc2626;
+  color: white !important;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+}

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro de Comerciante - Mercado Mayorista Perú</title>
+  <link rel="stylesheet" href="css/estilos.css">
+  <link rel="stylesheet" href="css/registro.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="main-header">
+    <div class="header-container">
+      <div class="logo">
+        <span class="logo-icon">🏪</span>
+        <div class="logo-text">
+          <h1>Mercado Mayorista Perú</h1>
+          <p>Plataforma de Gestión de Puestos</p>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="consulta.html" class="nav-item">Mis Solicitudes</a>
+        <a href="caja.html" class="nav-item badge-caja">Módulo Caja</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card-register">
+      <div class="card-header">
+        <h2>Solicitud de Alquiler Temporal</h2>
+        <p>Completa los datos de tu puesto para calcular tu tarifa y proceder con el pago.</p>
+      </div>
+
+      <form id="form-registro" class="form-grid" novalidate>
+
+        <div class="form-section full-width">
+          <h3 class="section-title">Información del Comerciante</h3>
+        </div>
+
+        <div class="input-group">
+          <label for="campo1">Nombre de Empresa / Comerciante</label>
+          <div class="input-wrapper">
+            <span class="input-icon">👤</span>
+            <input type="text" id="campo1" name="campo1" placeholder="Ej. Distribuidora Los Andes" required>
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label for="campo2">Rubro / Categoria de Productos</label>
+          <div class="input-wrapper">
+            <span class="input-icon">📦</span>
+            <input type="text" id="campo2" name="campo2" placeholder="Ej. Frutas y Abarrotes" required>
+          </div>
+        </div>
+
+        <div class="form-section full-width">
+          <h3 class="section-title">Detalles del Puesto Requerido</h3>
+        </div>
+
+        <div class="input-group">
+          <label for="area_m2">Área Requerida (m²)</label>
+          <div class="input-wrapper">
+            <span class="input-icon">📐</span>
+            <input type="number" id="area_m2" name="area_m2" min="1" max="100" step="0.5" value="1" required>
+          </div>
+          <span class="input-hint">Mínimo 1 m²</span>
+        </div>
+
+        <div class="input-group">
+          <label for="dias">Días de Alquiler</label>
+          <div class="input-wrapper">
+            <span class="input-icon">📅</span>
+            <input type="number" id="dias" name="dias" min="1" max="30" value="1" required>
+          </div>
+          <span class="input-hint">De 1 a 30 días continuos</span>
+        </div>
+
+        <div class="input-group full-width">
+          <label class="checkbox-card" for="alto_consumo">
+            <input type="checkbox" id="alto_consumo" name="alto_consumo">
+            <div class="checkbox-content">
+              <div class="checkbox-title">
+                <span>⚡ Requiere Alto Consumo Eléctrico</span>
+                <span class="badge">+ S/ 5.00 / día</span>
+              </div>
+              <p class="checkbox-desc">Para congeladoras, maquinaria pesada o exhibidores de alto consumo.</p>
+            </div>
+          </label>
+        </div>
+
+        <div class="cotizador-panel full-width">
+          <div class="cotizador-header">
+            <span class="cotizador-icon">🧮</span>
+            <div>
+              <h4>Resumen Tarifario Estimado</h4>
+              <p>Diario: (S/ 15.00 × m²) + S/ 5.00 si aplica alto consumo</p>
+            </div>
+          </div>
+          <div class="cotizador-body">
+            <div class="cotizador-breakdown">
+              <span id="formula-detalle">1 m² × 1 día</span>
+            </div>
+            <div class="cotizador-total">
+              <span class="total-label">Total a Pagar</span>
+              <output id="monto-estimado" for="form-registro" class="monto-destacado">S/ 15.00</output>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-actions full-width">
+          <button type="submit" class="btn-primary">
+            <span>Registrar y Continuar al Pago</span>
+            <span class="btn-icon">➔</span>
+          </button>
+        </div>
+
+      </form>
+    </section>
+  </main>
+
+  <script type="module" src="js/registro/registro.js"></script>
+</body>
+</html>

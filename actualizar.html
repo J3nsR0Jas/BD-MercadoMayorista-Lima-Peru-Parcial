@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Perfil y Registro - Mercado Mayorista Perú</title>
+  <link rel="stylesheet" href="css/globales.css">
+  <link rel="stylesheet" href="css/formulario.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="contenedor header-contenido">
+      <h1 class="logo">
+        <svg class="icono-svg" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5-1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
+        </svg>
+        Mercado Mayorista <span>Perú</span>
+      </h1>
+      <nav class="nav">
+        <a href="index.html">Inicio</a>
+        <a href="formulario.html">Cotizar Puesto</a>
+        <a href="precios.html">Precios Diarios</a>
+        <a href="#" id="btn-cerrar-sesion" class="btn-logout-nav">Cerrar Sesión</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="seccion contenedor">
+    <div class="contenedor-formulario-tarjeta">
+      <h2 class="titulo-seccion">Mis Datos de Registro</h2>
+      <p class="subtitulo">Consulta o actualiza la información de tu puesto o empresa registrada</p>
+
+      <form id="form-actualizar-datos" class="form-estilizado">
+        <input type="hidden" id="usuario-id">
+
+        <div class="campo">
+          <label for="act-razon">Razón Social / Nombre Comercial:</label>
+          <input type="text" id="act-razon" placeholder="Ej. Comercial Los Olivos" required>
+        </div>
+
+        <div class="campo">
+          <label for="act-producto">Producto Principal / Rubro:</label>
+          <input type="text" id="act-producto" placeholder="Ej. Papa, Cebolla, Frutas" required>
+        </div>
+
+        <div class="campo">
+          <label for="act-telefono">Teléfono / Celular de Contacto:</label>
+          <input type="text" id="act-telefono" placeholder="Ej. 987654321" required>
+        </div>
+
+        <div class="campo">
+          <label for="act-estado">Estado de la Solicitud:</label>
+          <input type="text" id="act-estado" placeholder="Estado del registro" readonly class="input-readonly">
+        </div>
+
+        <div class="acciones-form">
+          <button type="submit" class="btn btn-bloque">💾 Guardar / Actualizar Datos</button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="contenedor">
+      <p>&copy; 2026 Mercado Mayorista Perú - Empresa Municipal de Mercados. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

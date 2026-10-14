@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercado Mayorista Perú - Inicio</title>
+    <link rel="stylesheet" href="css/globales.css">
+    <link rel="stylesheet" href="css/inicio.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="contenedor header-contenido">
+            <h1 class="logo">
+                <svg class="icono-svg" viewBox="0 0 24 24">
+                    <path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
+                </svg>
+                Mercado Mayorista <span>Perú</span>
+            </h1>
+            <nav class="nav">
+                <a href="index.html" class="activo">Inicio</a>
+                <a href="formulario.html">Cotizar Puesto</a>
+                <a href="precios.html">Precios Diarios</a>
+                <a href="login.html">Iniciar Sesión</a>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="contenedor hero-contenido">
+            <h2>El centro de abastecimiento más grande del país</h2>
+            <p>Conectando productores, comerciantes y familias peruanas con productos frescos de la mejor calidad al por mayor.</p>
+            <a href="formulario.html" class="btn">Registrarse como Comerciante</a>
+        </div>
+    </section>
+
+    <main class="seccion contenedor">
+        
+        <div class="widget-estado-contenedor">
+            <div class="widget-estado-card">
+                <div class="widget-bloque widget-clima">
+                    <div class="clima-icono">⛅</div>
+                    <div class="clima-info">
+                        <span class="clima-temp" id="widget-temp">21°C</span>
+                        <span class="clima-ubicacion">Santa Anita, Lima</span>
+                        <small class="clima-condicion" id="widget-condicion">Actualizando tiempo real...</small>
+                    </div>
+                </div>
+
+                <div class="widget-separador"></div>
+
+                <div class="widget-bloque widget-operatividad">
+                    <div class="estado-indicador">
+                        <span class="punto-verde-pulso"></span>
+                        <strong>Estado de Ingreso:</strong>
+                    </div>
+                    <span class="badge-estado badge-fluido">Tránsito Fluido</span>
+                    <p class="estado-detalle">Operatividad en Balanzas al 100% | Tiempo medio de espera: 8 min</p>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="titulo-seccion">Registro Rápido de Interés y Cotizador de Puesto</h2>
+        <p class="subtitulo">Ingresa las especificaciones del puesto requerido para calcular tu tarifa estimada</p>
+
+        <!-- ESTRUCTURA EN 2 COLUMNAS (PANEL DE BENEFICIOS + FORMULARIO) -->
+        <div class="cotizador-contenedor-2col">
+
+            <!-- COLUMNA IZQUIERDA: PANEL DE BENEFICIOS -->
+            <aside class="panel-lateral-beneficios">
+                <h3>🏆 Beneficios de tu Puesto</h3>
+                <ul class="lista-beneficios">
+                    <li>
+                        <span class="icono-check">🛡️</span>
+                        <div>
+                            <strong>Seguridad 24/7</strong>
+                            <p>Monitoreo por cámaras de videovigilancia y resguardo privado en todos los pabellones.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="icono-check">⚡</span>
+                        <div>
+                            <strong>Suministro Garantizado</strong>
+                            <p>Puntos de energía eléctrica y trifásica para conservación de frío y balanzas.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="icono-check">🚛</span>
+                        <div>
+                            <strong>Acceso Directo a Descarga</strong>
+                            <p>Ubicación estratégica cerca de la Balanza Electrónica y Puertas 1 y 2.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="icono-check">📄</span>
+                        <div>
+                            <strong>Emisión de Comprobante QR</strong>
+                            <p>Aprobación inmediata con pase digital para mostrar en la garita de ingreso.</p>
+                        </div>
+                    </li>
+                </ul>
+
+                <!-- Bloque de Asistencia Rápida -->
+                <div class="bloque-soporte-wsp">
+                    <span class="icono-wsp">💬</span>
+                    <div>
+                        <p class="titulo-wsp">¿Dudas con tu tarifa diaria?</p>
+                        <p class="sub-wsp">Atención al Comerciante - Administración Santa Anita</p>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- COLUMNA DERECHA: FORMULARIO -->
+            <div class="bg-gris formulario">
+                <form id="form-inicio-comerciante">
+                    <div class="campo">
+                        <label for="nombre">Nombre o Razón Social:</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Ej: Comercial Los Andes" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="producto">Producto Principal / Rubro:</label>
+                        <input type="text" id="producto" name="producto" placeholder="Ej: Papa, Cebolla, Frutas" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="contacto">Teléfono / WhatsApp:</label>
+                        <input type="text" id="contacto" name="contacto" placeholder="Ej: 987654321" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="area_m2">Área Requerida (m²):</label>
+                        <input type="number" id="area_m2" name="area_m2" min="1" step="0.5" value="1" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="dias">Días de Alquiler:</label>
+                        <input type="number" id="dias" name="dias" min="1" value="1" required>
+                    </div>
+
+                    <div class="campo campo-checkbox-contenedor">
+                        <label class="label-checkbox">
+                            <input type="checkbox" id="alto_consumo" name="alto_consumo">
+                            ¿Requiere Alto Consumo Eléctrico? (+ S/ 5.00/día)
+                        </label>
+                    </div>
+
+                    <div class="tarjeta-resumen-monto">
+                        <span class="resumen-titulo">DESGLOSE TARIFA DIARIA</span>
+                        <p id="formula-detalle" class="resumen-formula">1 m² × S/ 15.00 = S/ 15.00/día</p>
+                        <hr class="resumen-linea">
+                        <span class="resumen-subtitulo">MONTO TOTAL ESTIMADO A PAGAR</span>
+                        <output id="monto-estimado" class="resumen-output">S/ 15.00</output>
+                    </div>
+
+                    <button type="submit" class="btn btn-bloque">
+                        Enviar e Ir a Pagar
+                    </button>
+                </form>
+            </div>
+
+        </div>
+
+        <div class="seccion-horarios">
+            <h2 class="titulo-seccion">Horarios Informativos de Ingreso de Camiones</h2>
+            <p class="subtitulo">Programación general para el acceso de transporte de carga y pesaje en balanza.</p>
+
+            <div class="banner-imagen-wrapper">
+                <img src="imagenes/carga-camiones.jpg" alt="Ingreso de Camiones de Carga" class="banner-imagen">
+            </div>
+
+            <div class="grid-tres-columnas">
+                <div class="tarjeta-info">
+                    <h3>Carga Pesada (Tráileres / Camiones)</h3>
+                    <p class="resaltado-horario">00:00 hrs - 06:00 hrs</p>
+                    <p>Ingreso exclusivo por Puerta 1. Descarga de productos agrícolas al por mayor en pabellones A y B.</p>
+                </div>
+
+                <div class="tarjeta-info">
+                    <h3>Carga Mediana (Furgones / Camionetas)</h3>
+                    <p class="resaltado-horario">06:00 hrs - 12:00 hrs</p>
+                    <p>Ingreso por Puerta 2. Abastecimiento directo para comerciantes mayoristas y distribuidores.</p>
+                </div>
+
+                <div class="tarjeta-info">
+                    <h3>Despacho y Salida General</h3>
+                    <p class="resaltado-horario">12:00 hrs - 18:00 hrs</p>
+                    <p>Retiro de vehículos pesados y reacondicionamiento de zonas de descarga y limpieza.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="seccion-mapa">
+            <h2 class="titulo-seccion">Ubicación y Puertas de Acceso</h2>
+            <p class="subtitulo">Ubica estratégicamente las zonas de ingreso y descarga en tiempo real</p>
+
+            <div class="mapa-card-interactive">
+                <div class="mapa-info-panel">
+                    <h3>Gran Mercado Mayorista de Lima</h3>
+                    <p class="mapa-direccion">📍 Av. La Cultura s/n, Santa Anita, Lima - Perú</p>
+                    
+                    <div class="puntos-interes">
+                        <button type="button" class="btn-punto activo" data-lat="-12.0402" data-lng="-76.9602" data-puerta="Puerta 1 - Carga Pesada">
+                            <span>🚛</span> Puerta 1 (Carga Pesada)
+                        </button>
+                        <button type="button" class="btn-punto" data-lat="-12.0415" data-lng="-76.9585" data-puerta="Puerta 2 - Carga Mediana">
+                            <span>🚚</span> Puerta 2 (Carga Mediana)
+                        </button>
+                        <button type="button" class="btn-punto" data-lat="-12.0390" data-lng="-76.9620" data-puerta="Pabellones A y B - Ventas">
+                            <span>🌽</span> Pabellones A y B (Venta General)
+                        </button>
+                    </div>
+
+                    <div class="info-puerta-densa">
+                        <strong>Acceso Seleccionado:</strong>
+                        <p id="texto-puerta">Puerta 1 - Ingreso exclusivo para tráileres y camiones de provincia.</p>
+
+                        <img src="imagenes/balanza-pesaje.jpg" alt="Control de Balanza en Puerta" class="balanza-imagen">
+                    </div>
+
+                    <a href="https://maps.google.com/?q=Gran+Mercado+Mayorista+de+Lima" target="_blank" rel="noopener noreferrer" class="btn btn-gps">
+                        🗺️ Abrir en Google Maps
+                    </a>
+                </div>
+
+                <div class="mapa-frame-wrapper">
+                    <div class="mapa-overlay-pulse"></div>
+                    <iframe 
+                        id="gmap-canvas"
+                        src="https://maps.google.com/maps?q=-12.0402,-76.9602&z=16&ie=UTF8&iwloc=&output=embed" 
+                        loading="lazy" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="contenedor">
+            <p>&copy; 2026 Mercado Mayorista Perú - Empresa Municipal de Mercados. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script type="module" src="js/registro/registro.js"></script>
+</body>
+</html>
