@@ -35,14 +35,12 @@ export default function PanelEssalud() {
   const cambiarEstado = async (idCita, nuevoEstado) => {
     setActualizando(idCita);
     try {
-      // 1. Quitar la restricción CHECK en caso de que esté limitando minúsculas/mayúsculas
       try {
         await sql`ALTER TABLE citas_essalud DROP CONSTRAINT IF EXISTS citas_essalud_estado_check;`;
       } catch (eCheck) {
         console.warn('No se requirió eliminar constraint:', eCheck);
       }
 
-      // 2. Actualizar el estado en Neon DB
       await sql`
         UPDATE citas_essalud
         SET estado = ${nuevoEstado}

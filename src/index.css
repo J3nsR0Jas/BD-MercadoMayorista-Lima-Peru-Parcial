@@ -1,61 +1,202 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
 :root {
-  --primary: #10b981;
-  --primary-hover: #059669;
-  --dark-bg: #0b132b;
-  --card-bg: rgba(255, 255, 255, 0.9);
-  --text-main: #1e293b;
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --dark-bg: #f8fafc;
+  --card-bg: rgba(255, 255, 255, 0.92);
+  --text-main: #0f172a;
   --accent-blue: #3b82f6;
   --accent-amber: #f59e0b;
   --accent-red: #ef4444;
 }
 
-body {
+/* 1. Reset base y transparencia de contenedores */
+html, body {
   margin: 0;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  background: linear-gradient(-45deg, #0f172a, #064e3b, #0f2b1d, #022c22);
-  background-size: 400% 400%;
-  animation: gradientBG 15s ease infinite;
+  padding: 0;
+  width: 100%;
   min-height: 100vh;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   color: var(--text-main);
 }
 
-/* Fondo con degradado animado */
-@keyframes gradientBG {
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  background: transparent !important;
+}
+
+/* 2. Fondo animado: Claro, brillante y pastel (Línea 31 velocidad en 5s) */
+body {
+  min-height: 100vh;
+  background: linear-gradient(-45deg, #f0f9ff, #e0e7ff, #f3e8ff, #ecfdf5);
+  background-size: 400% 400%;
+  animation: auroraGradient 2s ease infinite;
+  background-attachment: fixed;
+}
+
+@keyframes auroraGradient {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
 
-/* Animación de entrada para vistas */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* -------------------------------------------------------------
+   ESTILOS PARA EL DASHBOARD DE MÓDULOS SEPARADOS (TARJETAS)
+   ------------------------------------------------------------- */
+
+/* Envoltorio principal que centra todo en la pantalla */
+.landing-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  min-height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-/* Contenedores Principales */
+/* Encabezado Principal */
+.landing-header {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.landing-header .shield-icon {
+  font-size: 3.5rem;
+  margin-bottom: 10px;
+}
+
+.landing-header h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #1e3a8a;
+  background: linear-gradient(90deg, #1e3a8a, #2563eb);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0 0 10px 0;
+}
+
+.landing-header p {
+  color: #64748b;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* Rejilla de Tarjetas de Módulos (Separados en 2 columnas) */
+.modules-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  width: 100%;
+  max-width: 950px;
+  margin-bottom: 30px;
+}
+
+/* Tarjeta Individual de Cada Módulo */
+.module-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.05);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.module-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 35px rgba(15, 23, 42, 0.12);
+  border-color: rgba(255, 255, 255, 1);
+}
+
+.module-card .icon {
+  font-size: 2.5rem;
+  margin-bottom: 12px;
+}
+
+.module-card h3 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* Colores específicos de borde e interactividad según el módulo */
+.module-card.comerciante {
+  border-top: 5px solid #10b981;
+}
+.module-card.comerciante h3 { color: #059669; }
+
+.module-card.admin {
+  border-top: 5px solid #f59e0b;
+}
+.module-card.admin h3 { color: #d97706; }
+
+.module-card.pnp {
+  border-top: 5px solid #2563eb;
+}
+.module-card.pnp h3 { color: #1d4ed8; }
+
+.module-card.essalud {
+  border-top: 5px solid #0284c7;
+}
+.module-card.essalud h3 { color: #0369a1; }
+
+/* Botón de reinicio separado al pie */
+.reset-container {
+  margin-top: 10px;
+}
+
+.btn-reset {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1.5px dashed #cbd5e1;
+  color: #64748b;
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-reset:hover {
+  background: #ffffff;
+  color: #334155;
+  border-color: #94a3b8;
+}
+
+/* -------------------------------------------------------------
+   ESTILOS GENERALES (Formularios, Tablas y Paneles Internos)
+   ------------------------------------------------------------- */
 .mercado-container {
   padding: 32px;
   max-width: 1000px;
   margin: 30px auto;
   background: var(--card-bg);
-  backdrop-filter: blur(16px);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border-radius: 24px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.9);
 }
 
 .crumb {
   font-family: monospace;
-  color: #059669;
+  color: #2563eb;
   font-weight: 700;
   font-size: 0.85rem;
   text-transform: uppercase;
@@ -66,15 +207,14 @@ body {
 h2 {
   font-size: 2.2rem;
   font-weight: 800;
-  color: #065f46;
-  background: linear-gradient(90deg, #065f46, #10b981);
+  color: #1e3a8a;
+  background: linear-gradient(90deg, #1e3a8a, #3b82f6);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-top: 0;
 }
 
-/* Formularios estilizados */
 .mercado-form {
   display: flex;
   flex-direction: column;
@@ -97,25 +237,25 @@ h2 {
 .fld .in {
   width: 100%;
   padding: 12px 16px;
-  border: 2px solid #e2e8f0;
+  border: 2px solid #cbd5e1;
   border-radius: 12px;
   font-size: 1rem;
   transition: all 0.3s ease;
   box-sizing: border-box;
-  background: #f8fafc;
+  background: #ffffff;
+  color: #0f172a;
 }
 
 .fld .in:focus {
   outline: none;
   border-color: var(--primary);
-  background: #fff;
-  box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.15);
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
   transform: translateY(-2px);
 }
 
-/* Botones interactivos con escala */
 .abtn {
-  background: linear-gradient(135deg, #10b981, #059669);
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
   color: #fff;
   font-weight: 700;
   font-size: 1.05rem;
@@ -124,19 +264,18 @@ h2 {
   padding: 14px 28px;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
 }
 
 .abtn:hover {
   transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 12px 25px rgba(16, 185, 129, 0.4);
+  box-shadow: 0 12px 25px rgba(37, 99, 235, 0.35);
 }
 
 .abtn:active {
   transform: translateY(0) scale(0.98);
 }
 
-/* Tablas Modernas Interactivas */
 table.at {
   width: 100%;
   border-collapse: separate;
@@ -144,12 +283,12 @@ table.at {
   margin-top: 20px;
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
 }
 
 table.at th {
   background: #f1f5f9;
-  color: #475569;
+  color: #334155;
   font-weight: 700;
   padding: 14px;
   text-align: left;
@@ -158,16 +297,16 @@ table.at th {
 
 table.at td {
   padding: 14px;
-  background: #fff;
+  background: #ffffff;
   border-bottom: 1px solid #f1f5f9;
   transition: background 0.2s ease;
+  color: #334155;
 }
 
 table.at tr:hover td {
   background: #f8fafc;
 }
 
-/* Badges con efecto de pulso */
 .bd {
   display: inline-block;
   padding: 4px 12px;
@@ -178,6 +317,6 @@ table.at tr:hover td {
   letter-spacing: 0.5px;
 }
 
-.bd.green { background: #dcfce7; color: #15803d; }
+.bd.green { background: #dbeafe; color: #1e40af; }
 .bd.amber { background: #fef3c7; color: #b45309; }
-.bd.gray { background: #f1f5f9; color: #64748b; }
+.bd.gray { background: #f1f5f9; color: #475569; }

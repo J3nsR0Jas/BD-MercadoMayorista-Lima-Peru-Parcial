@@ -64,41 +64,56 @@ function LoginSimulado() {
   };
 
   return (
-    <div className="mercado-container" style={{ textAlign: 'center', marginTop: '50px', maxWidth: '600px' }}>
-      <div style={{ fontSize: '3.5rem', marginBottom: '10px' }}>🛡️</div>
-      <h2>Mercado Seguro · Grupo 4</h2>
-      <p style={{ color: '#64748b', fontSize: '1.05rem', marginBottom: '25px' }}>
-        Plataforma Unificada Multi-Módulo (Mercado Mayorista · PNP Central · EsSalud)
-      </p>
+    <div className="landing-wrapper">
+      <div className="landing-header">
+        <div className="shield-icon">🛡️</div>
+        <h1>Mercado Seguro · Grupo 4</h1>
+        <p>Plataforma Unificada Multi-Módulo (Mercado Mayorista · PNP Central · EsSalud)</p>
+      </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '14px' }}>
-        <button type="button" className="abtn" onClick={() => handleLogin('cliente')}>
-          🛒 Comerciante
+      <div className="modules-grid">
+        <button 
+          type="button" 
+          className="module-card comerciante" 
+          onClick={() => handleLogin('cliente')}
+        >
+          <span className="icon">🛒</span>
+          <h3>Comerciante</h3>
         </button>
-        <button type="button" className="abtn" style={{ background: 'linear-gradient(135deg, #f59e0b, #d97706)' }} onClick={() => handleLogin('admin_mercado')}>
-          📊 Admin Mercado
+
+        <button 
+          type="button" 
+          className="module-card admin" 
+          onClick={() => handleLogin('admin_mercado')}
+        >
+          <span className="icon">📊</span>
+          <h3>Admin Mercado</h3>
         </button>
-        <button type="button" className="abtn" style={{ background: 'linear-gradient(135deg, #3b82f6, #1d4ed8)' }} onClick={() => handleLogin('pnp')}>
-          👮 Oficial PNP
+
+        <button 
+          type="button" 
+          className="module-card pnp" 
+          onClick={() => handleLogin('pnp')}
+        >
+          <span className="icon">👮</span>
+          <h3>Oficial PNP</h3>
         </button>
-        <button type="button" className="abtn" style={{ background: 'linear-gradient(135deg, #0284c7, #0369a1)' }} onClick={() => handleLogin('essalud')}>
-          🏥 Médico EsSalud
+
+        <button 
+          type="button" 
+          className="module-card essalud" 
+          onClick={() => handleLogin('essalud')}
+        >
+          <span className="icon">🏥</span>
+          <h3>Médico EsSalud</h3>
         </button>
       </div>
 
-      <div style={{ marginTop: '35px' }}>
+      <div className="reset-container">
         <button 
           type="button" 
+          className="btn-reset" 
           onClick={handleReset}
-          style={{
-            background: 'transparent',
-            border: '1px dashed #cbd5e1',
-            color: '#64748b',
-            padding: '8px 16px',
-            borderRadius: '8px',
-            cursor: 'pointer',
-            fontSize: '0.85rem'
-          }}
         >
           🔄 Reiniciar Estado / Cerrar Sesiones Atascadas
         </button>
